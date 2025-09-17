@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Motivated Daily</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>🌟 Motivated Daily</h1>
+
+    <!-- Tasks Section -->
+    <section class="card task-card">
+      <h2>📝 Daily Tasks</h2>
+      <div class="input-group">
+        <input type="text" id="task" placeholder="Task title" />
+        <input type="text" id="desc" placeholder="Task description" />
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <ul id="taskList"></ul>
+    </section>
+
+    <!-- Motivation Section -->
+    <section class="card motivation-card">
+      <h2>💬 Your Motivations</h2>
+      <div class="input-group">
+        <input type="text" id="motivationInput" placeholder="Write something motivating..." />
+        <button onclick="addMotivation()">Add</button>
+      </div>
+      <ul id="motivationList"></ul>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
