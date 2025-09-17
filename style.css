@@ -6,8 +6,10 @@
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: #f4f6fa;
+  background: linear-gradient(135deg, #fce3ec, #ffe8c7);
+  min-height: 100vh;
   padding: 20px;
+  color: #333;
 }
 
 .container {
@@ -15,54 +17,64 @@ body {
   margin: auto;
 }
 
-h1 {
+header {
   text-align: center;
   margin-bottom: 30px;
-  color: #333;
+}
+
+header h1 {
+  font-size: 2em;
+  color: #222;
+}
+
+header p {
+  font-size: 1em;
+  color: #555;
 }
 
 .card {
-  background: white;
+  background: #fff;
   padding: 20px;
-  margin-bottom: 30px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border-radius: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-.task-card {
-  border-left: 5px solid #007bff;
-}
-
-.motivation-card {
-  border-left: 5px solid #f39c12;
+.card:hover {
+  transform: translateY(-2px);
 }
 
 h2 {
   margin-bottom: 15px;
+  font-size: 1.2em;
   color: #444;
 }
 
 .input-group {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   margin-bottom: 20px;
 }
 
 .input-group input {
   flex: 1;
-  padding: 10px;
-  font-size: 16px;
+  padding: 10px 15px;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .input-group button {
-  padding: 10px 15px;
+  padding: 10px 16px;
+  font-size: 18px;
   background: #007bff;
   color: white;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 .input-group button:hover {
@@ -71,6 +83,7 @@ h2 {
 
 ul {
   list-style: none;
+  padding-left: 0;
 }
 
 li {
@@ -78,7 +91,7 @@ li {
   margin-bottom: 10px;
   padding: 12px;
   border-left: 4px solid #007bff;
-  border-radius: 5px;
+  border-radius: 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -87,7 +100,7 @@ li {
 
 li.done {
   text-decoration: line-through;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .motivation-card li {
@@ -96,18 +109,36 @@ li.done {
 
 li span {
   flex: 1;
+  word-break: break-word;
 }
 
 li button {
   margin-left: 10px;
-  background: crimson;
-  color: white;
-  border: none;
   padding: 6px 10px;
-  border-radius: 3px;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
 
 li button.done-btn {
-  background: green;
+  background: #28a745;
+  color: white;
+}
+
+li button.delete-btn {
+  background: crimson;
+  color: white;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-group input,
+  .input-group button {
+    width: 100%;
+  }
 }
