@@ -1,7 +1,4 @@
-// -------------------------
-// DAILY TASKS
-// -------------------------
-
+// ========== TASK LOGIC ==========
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 let today = new Date().toDateString();
 let lastSavedDate = localStorage.getItem("lastSavedDate");
@@ -47,12 +44,9 @@ function renderTasks() {
     const li = document.createElement("li");
     li.className = task.done ? "done" : "";
     li.innerHTML = `
-      <span>
-        <strong>${task.title}</strong><br/>
-        <small>${task.desc}</small>
-      </span>
+      <span><strong>${task.title}</strong><br/><small>${task.desc}</small></span>
       <button class="done-btn" onclick="toggleDone(${index})">${task.done ? "Undo" : "Done"}</button>
-      <button onclick="deleteTask(${index})">Delete</button>
+      <button class="delete-btn" onclick="deleteTask(${index})">Delete</button>
     `;
     taskList.appendChild(li);
   });
@@ -60,10 +54,7 @@ function renderTasks() {
 
 renderTasks();
 
-// -------------------------
-// MOTIVATION SECTION
-// -------------------------
-
+// ========== MOTIVATION LOGIC ==========
 let motivations = JSON.parse(localStorage.getItem("motivations")) || [];
 
 function saveMotivations() {
@@ -93,7 +84,7 @@ function renderMotivations() {
     const li = document.createElement("li");
     li.innerHTML = `
       <span>${text}</span>
-      <button onclick="deleteMotivation(${index})">Delete</button>
+      <button class="delete-btn" onclick="deleteMotivation(${index})">Delete</button>
     `;
     list.appendChild(li);
   });
