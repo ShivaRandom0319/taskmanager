@@ -8,25 +8,26 @@
 </head>
 <body>
   <div class="container">
-    <h1>🌟 Motivated Daily</h1>
+    <header>
+      <h1>🌟 Motivated Daily</h1>
+      <p>Stay productive & inspired every day!</p>
+    </header>
 
-    <!-- Tasks Section -->
     <section class="card task-card">
       <h2>📝 Daily Tasks</h2>
       <div class="input-group">
         <input type="text" id="task" placeholder="Task title" />
         <input type="text" id="desc" placeholder="Task description" />
-        <button onclick="addTask()">Add Task</button>
+        <button onclick="addTask()">➕</button>
       </div>
       <ul id="taskList"></ul>
     </section>
 
-    <!-- Motivation Section -->
     <section class="card motivation-card">
-      <h2>💬 Your Motivations</h2>
+      <h2>💬 Motivation Board</h2>
       <div class="input-group">
-        <input type="text" id="motivationInput" placeholder="Write something motivating..." />
-        <button onclick="addMotivation()">Add</button>
+        <input type="text" id="motivationInput" placeholder="Write something motivational..." />
+        <button onclick="addMotivation()">➕</button>
       </div>
       <ul id="motivationList"></ul>
     </section>
